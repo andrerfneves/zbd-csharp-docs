@@ -1,9 +1,9 @@
 {
-  "name": "zbd-rust-docs",
+  "name": "zbd-csharp-docs",
   "private": true,
   "version": "1.0.1",
-  "description": "The official documentation website for the ZBD Rust Library",
-  "repository": "zebedeeio/zbd-rust-docs",
+  "description": "The official documentation website for the ZBD C# SDK",
+  "repository": "zebedeeio/zbd-csharp-docs",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
