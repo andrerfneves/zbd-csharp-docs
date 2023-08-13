@@ -7,7 +7,7 @@ export default () => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/miketwenty1/zebedee-rust"
+          href="https://github.com/zebedeeio/zbd-csharp"
         >
           GitHub
         </a>

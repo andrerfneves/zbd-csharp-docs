@@ -44,7 +44,7 @@ export default () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/miketwenty1/zebedee-rust"
+            href="https://github.com/zebedeeio/zbd-csharp"
             className={styles.link}
           >
             GitHub
@@ -72,11 +72,8 @@ export default () => {
       >
         <Link href="/#setup">Installation</Link>
         <Link href="/#api">API</Link>
-        <Link
-          href="https://github.com/miketwenty1/zebedee-rust"
-          target="_blank"
-        >
-          GitHub: zebedee-rust
+        <Link href="https://github.com/zebedeeio/zbd-csharp" target="_blank">
+          GitHub: zbd-csharp
         </Link>
         <Link href="https://dashboard.zebedee.io" target="_blank">
           ZBD Dev Dashboard
