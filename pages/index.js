@@ -58,40 +58,31 @@ const getEntity = (word) => {
 }
 
 const codeSnippet = `
-  use std::env;
-  use zebedee_rust::{ln_address::*, ZebedeeClient};
+  // Create API Handler with YOUR API Key passed to the constructor as a string
+  var handler = new ZebedeeHandler(API_KEY); 
 
-  #[tokio::main]
-  async fn main() {
-    let apikey: String = env::var("ZBD_API_KEY").unwrap();
-    let zebedee_client = ZebedeeClient::new().apikey(apikey).build();
+  // Make API to Get Wallet Details
+  var wallet = await handler.GetWalletDetails(); 
+  // Pay a lightning address
+  var lnPayment = await handler.SendPaymentToLightningAddress("beaver@zbd.gg", "10000", "test comment");
 
-    // Create a Lightning payment
-    let payment = LnPayment {
-      ln_address: String::from("dannym@zbd.gg"),
-      amount: String::from("10000"),
-      ..Default::default()
-    };
-
-    // Initiate the payment
-    let payment_res = zebedee_client.pay_ln_address(&payment).await.unwrap();
-    
-    // Print the result
-    println!("Internal transfer result: {:?}", payment_res);
+  // Make Sure API Call was Successful
+  if (lnPayment.success) 
+  {
+      System.Console.WriteLine(lnPayment.id);
   }
 
 `
 
-const rustAuthSnippet = `
-  use zebedee_rust::{ZebedeeClient};
+const csharpAuthSnippet = `
+  var handler = new ZebedeeHandler("YOUR_API_KEY_HERE");
+  
+  var wallet = await hander.GetWalletDetails();
 
-  let zbd_client = ZebedeeClient::new()
-    .apikey(YOUR_API_KEY_HERE)
-    .build();
-
-  let payment = GamertagPayment{...};
-
-  let payment_res = zbd_client.pay_gamertag(&payment).await.unwrap();
+  if(wallet.success)
+  {
+      System.Console.WriteLine(wallet.data.balance);
+  }
 
 `
 
@@ -108,13 +99,13 @@ export default function HomePage() {
           className={heroStyles.logoWrapper}
         />
         <div className={heroStyles.mainTitle}>
-          <h1>Rust Crate for ZBD API</h1>
+          <h1>C# SDK for ZBD API</h1>
         </div>
         <div className={heroStyles.terminal}>
           <div className={heroStyles.codeSnippet}>
             <CopyBlock
               text={codeSnippet}
-              language={'rust'}
+              language={'csharp'}
               showLineNumbers={false}
               wrapLines
               theme={dracula}
@@ -123,7 +114,7 @@ export default function HomePage() {
         </div>
         <div className={heroStyles.download}>
           <DownloadButton
-            buttonOne={{ label: 'View Crate Docs', url: '/#api' }}
+            buttonOne={{ label: 'View SDK Docs', url: '/#api' }}
           />
           <a className={heroStyles.other} href="#sdks">
             View other SDK options
@@ -142,21 +133,21 @@ export default function HomePage() {
           <a href="#setup">Getting Started</a>
         </h2>
         <p>
-          The Rust Crate for ZBD API is available under{' '}
-          <a href="https://crates.io/crates/zebedee-rust">
-            <code>zebedee-rust</code>
+          The C# SDK for ZBD API is available under{' '}
+          <a href="https://github.com/zebedeeio/zbd-csharp">
+            <code>zbd-csharp</code>
           </a>
           . When building tools with ZBD support we encourage you to include{' '}
           <code>zbd</code> in the <code>keywords</code> field in{' '}
-          <code>Cargo.toml</code>.
+          <code>.csproj</code>.
         </p>
         <p>
-          All you have to do to get started is add <code>zebedee-rust</code> as
-          a dependency to your Rust-based project. You can do so using{' '}
-          <code>cargo</code>:
+          All you have to do to get started is add <code>zbd-csharp</code> as a
+          dependency to your C#-based project. You can do so using{' '}
+          <code>dotnet</code>:
         </p>
         <pre>
-          <code>cargo add zebedee_rust</code>
+          <code>dotnet add package zbd-csharp</code>
         </pre>
         <p>
           Now let's authenticate a specific Wallet with that ZBD Project's API
@@ -171,8 +162,8 @@ export default function HomePage() {
         </h2>
         <p>
           In order to authenticate your Project Wallet with the ZBD API, you
-          will need to provide your ZBD Project's API Key to the{' '}
-          <code>zebedee-rust</code> crate.{' '}
+          will need to provide your ZBD Project's API Key to the <code>C#</code>{' '}
+          SDK.{' '}
           <a
             href="https://docs.zebedee.io/docs/docs/dashboard-project-api"
             target="_blank"
@@ -182,15 +173,14 @@ export default function HomePage() {
           .
         </p>
         <p>
-          First you must import the <code>zebedee-rust</code> crate client into
-          your codebase, and then instantiate it with your Project API Key
-          (replace `YOUR_API_KEY_HERE` below with your actual ZBD Project's API
-          Key).
+          First you must import the <code>C#</code> SDK client into your
+          codebase, and then instantiate it with your Project API Key (replace
+          `YOUR_API_KEY_HERE` below with your actual ZBD Project's API Key).
         </p>
         <div className={heroStyles.codeSnippet}>
           <CopyBlock
-            text={rustAuthSnippet}
-            language={'rust'}
+            text={csharpAuthSnippet}
+            language={'csharp'}
             showLineNumbers={false}
             wrapLines
             theme={dracula}
@@ -200,20 +190,19 @@ export default function HomePage() {
         <p>
           You're all set. Now let's move some money at the speed of the
           internet! Check the <a href="/#api">SDK API Reference</a> below for
-          more information on how to use the <code>zebedee-rust</code> crate.
+          more information on how to use the <code>zbd-csharp</code> SDK.
         </p>
 
         {/**
          * Project goals
          */}
         <h2 id="goals">
-          <a href="#goals">zebedee-rust</a>
+          <a href="#goals">zbd-csharp</a>
         </h2>
         <p>
           The goal of the project is to create a beautiful and extensible
-          experience for developers using ZBD APIs in a Rust environment. The
-          ZBD community has taken on the challenge and built the Rust SDK
-          themselves. The focus is to provide parity with{' '}
+          experience for developers using ZBD APIs in a dotnet environment. The
+          focus is to provide parity with{' '}
           <a href="https://docs.zebedee.io/api/intro" target="_blank">
             ZBD REST API
           </a>
@@ -228,9 +217,9 @@ export default function HomePage() {
         </h2>
         <p>
           Below is a comprehensive list of the methods and functions available
-          in the <code>zebedee-rust</code> crate. These methods are ONLY
-          available to the <code>ZebedeeClient</code> client instance after it's
-          been properly authenticated with a Project's API Key.
+          in the <code>zbd-csharp</code> SDK. These methods are ONLY available
+          to the <code>ZebedeeHandler</code> client instance after it's been
+          properly authenticated with a Project's API Key.
         </p>
         <div className="table large">
           <table className="api">
@@ -328,10 +317,10 @@ export default function HomePage() {
           Feature Request? Bugfix? Recommendations? We're all ears! Head on over
           to the{' '}
           <a
-            href="https://github.com/miketwenty1/zebedee-rust/issues"
+            href="https://github.com/zebedeeio/zbd-csharp/issues"
             target="_blank"
           >
-            zebedee-rust Issues
+            zbd-csharp Issues
           </a>{' '}
           page and submit one. We also welcome Pull Requests and other
           contributions to the library.
@@ -340,8 +329,8 @@ export default function HomePage() {
         <div className={heroStyles.download}>
           <DownloadButton
             buttonOne={{
-              label: 'Crate Source Code',
-              url: 'https://github.com/miketwenty1/zebedee-rust',
+              label: 'SDK Source Code',
+              url: 'https://github.com/zebedeeio/zbd-csharp',
             }}
           />
           <a
