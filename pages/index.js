@@ -105,7 +105,7 @@ export default function HomePage() {
           <div className={heroStyles.codeSnippet}>
             <CopyBlock
               text={codeSnippet}
-              language={'csharp'}
+              language={'cpp'}
               showLineNumbers={false}
               wrapLines
               theme={dracula}
@@ -180,7 +180,7 @@ export default function HomePage() {
         <div className={heroStyles.codeSnippet}>
           <CopyBlock
             text={csharpAuthSnippet}
-            language={'csharp'}
+            language={'cpp'}
             showLineNumbers={false}
             wrapLines
             theme={dracula}
