@@ -164,10 +164,7 @@ export default function HomePage() {
           In order to authenticate your Project Wallet with the ZBD API, you
           will need to provide your ZBD Project's API Key to the <code>C#</code>{' '}
           SDK.{' '}
-          <a
-            href="https://docs.zebedee.io/docs/docs/dashboard-project-api"
-            target="_blank"
-          >
+          <a href="https://zbd.dev/docs/dashboard/projects/api" target="_blank">
             You can find your Project API Key in the ZBD Developer Dashboard
           </a>
           .
