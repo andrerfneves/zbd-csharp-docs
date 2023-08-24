@@ -134,7 +134,7 @@ export default function HomePage() {
         </h2>
         <p>
           The C# SDK for ZBD API is available under{' '}
-          <a href="https://github.com/zebedeeio/zbd-csharp">
+          <a href="https://www.nuget.org/packages/dev.zbd.csharp/">
             <code>zbd-csharp</code>
           </a>
           . When building tools with ZBD support we encourage you to include{' '}
@@ -147,7 +147,7 @@ export default function HomePage() {
           <code>dotnet</code>:
         </p>
         <pre>
-          <code>dotnet add package zbd-csharp</code>
+          <code>dotnet add package dev.zbd.csharp</code>
         </pre>
         <p>
           Now let's authenticate a specific Wallet with that ZBD Project's API
