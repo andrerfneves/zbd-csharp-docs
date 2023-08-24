@@ -200,7 +200,7 @@ export default function HomePage() {
           The goal of the project is to create a beautiful and extensible
           experience for developers using ZBD APIs in a dotnet environment. The
           focus is to provide parity with{' '}
-          <a href="https://docs.zebedee.io/api/intro" target="_blank">
+          <a href="https://zbd.dev/api-reference/intro" target="_blank">
             ZBD REST API
           </a>
           , as well as providing further stability for developers.
