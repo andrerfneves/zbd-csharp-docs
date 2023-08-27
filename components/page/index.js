@@ -7,7 +7,7 @@ export default ({
   children,
   title = 'ZBD C# SDK - zbd-csharp',
   description = 'Use ZBD API in your C# project. The SDK provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
-  image = 'https://i.imgur.com/0Y9behL.png',
+  image = 'https://i.imgur.com/aHUXe3z.jpg',
 }) => {
   const { search } = useSearch()
 
