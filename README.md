@@ -31,7 +31,7 @@ Documentation website for the C# SDK for the ZBD API
 
 The official documentation website for the ZBD C# SDK [csharp.zbd.dev](https://csharp.zbd.dev).
 
-![](https://i.imgur.com/5KCQKRI.png)
+![](https://i.imgur.com/seG6lMM.png)
 
 ## Related Repositories
 
