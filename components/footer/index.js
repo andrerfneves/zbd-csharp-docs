@@ -7,7 +7,7 @@ export default () => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/miketwenty1/zebedee-rust"
+          href="https://github.com/zebedeeio/zbd-csharp"
         >
           GitHub
         </a>
@@ -17,7 +17,7 @@ export default () => (
       </div>
 
       <a
-        href="https://zebedee.io"
+        href="https://zbd.gg"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.zbd}
